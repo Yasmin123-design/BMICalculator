@@ -1,0 +1,50 @@
+﻿@* @model BMIModel
+<p>مؤشر كتلة الجسم: @Model.BMI</p>
+<p>الفئة: @ViewBag.Result</p> *@
+@model BMIModel
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة مؤشر كتلة الجسم</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .result {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>نتيجة مؤشر كتلة الجسم</h2>
+        <div class="result">
+            <p>مؤشر كتلة الجسم: <strong>@Model.BMI</strong></p>
+            <p>الفئة: <strong>@ViewBag.Result</strong></p>
+        </div>
+    </div>
+</body>
+</html>
+

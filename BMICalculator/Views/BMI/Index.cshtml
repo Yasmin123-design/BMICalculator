@@ -1,0 +1,90 @@
+﻿@* @model BMIModel
+
+<form asp-action="CaculateBMI" asp-controller="BMI" method="post">
+	<div asp-validation-summary="All"></div>
+	<div>
+		<label asp-for="Weight" style="font-weight: bold;"></label>
+		<input asp-for="Weight" class="form-control" />
+		<span asp-validation-for="Weight" class="text-danger"></span>
+	</div>
+	<br />
+	<div>
+		<label asp-for="Height" style="font-weight: bold;"></label>
+		<input asp-for="Height" class="form-control" />
+		<span asp-validation-for="Height" class="text-danger"></span>
+	</div>
+	<br />
+	<input type="submit" value="Calculate BMI" class="btn-btn-primary" style="background-color: blue; color: white;" />
+	</form> *@
+
+	@model BMIModel
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة مؤشر كتلة الجسم</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .btn-submit {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>حاسبة مؤشر كتلة الجسم</h2>
+        <form asp-action="CaculateBMI" asp-controller="BMI" method="post">
+            <div asp-validation-summary="All"></div>
+
+            <div class="form-group">
+                <label asp-for="Weight">Enter Weight In Kg:</label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Height">Enter Height in Meters:</label>
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="Calculate BMI" class="btn-submit" />
+        </form>
+    </div>
+</body>
+</html>
+
